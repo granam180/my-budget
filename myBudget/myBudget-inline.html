@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Budget 2015</title>
+    <style type="text/css">
+    body {
+        font: 14px arial;
+        text-align: center;
+    }
+
+    textarea {
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    input {
+    	text-align: right;
+    }
+
+    #frame {
+        width: 400px;
+        border: 13px solid #55a9a2;
+        padding: 15px;
+    }
+
+    #header {
+        font: 24px arial;
+        font-weight: bold;
+    }
+
+    #left {
+        float: left;
+        width: 110px;
+    }
+
+    #divider {
+        margin: 20px 10px;
+        border-bottom: 2px solid #f7ac79;
+    }
+
+    div.field {
+        margin-bottom: 10px;
+        text-align: right;
+    }
+    </style>
+    <script type="text/javascript">
+    //var monthNames = ["January", "February", "March", "April", "May", "June",   // how to wrap this in a function and
+    //  "July", "August", "September", "October", "November", "December"			// place it in html id tag
+    //];
+
+    //var d = new Date();
+    //document.write("myBudget for " + monthNames[d.getMonth()]);
+
+    function validateNumber(value) {
+        // Validate the number
+        // if (!isNumber(value))
+        //alert("Please enter a number.");
+    }
+
+    function calcPrice() {
+        //	var maxPrice = document.getElementById("costs").value;
+        var val1 = parseInt(document.getElementById("value1").value);
+        var val2 = parseInt(document.getElementById("value2").value);
+        var val3 = parseInt(document.getElementById("value3").value);
+        var val4 = parseInt(document.getElementById("value4").value);
+        var val5 = parseInt(document.getElementById("value5").value);
+        var val6 = parseInt(document.getElementById("value6").value);
+        var val7 = parseInt(document.getElementById("value7").value);
+
+        var ans = document.getElementById("answer");
+        ans.value = val1 - val2 - val3 - val4 - val5 - val6 - val7;
+    }
+    </script>
+</head>
+<!--<body onload="alert(new Date());"> -->
+
+<body>
+    <div id="frame">
+        <script type="text/javascript">
+        var monthNames = ["January", "February", "March", "April", "May", "June", // how to wrap this in a function and
+            "July", "August", "September", "October", "November", "December" // place it in html id tag
+        ];
+
+        var d = new Date();
+        document.write("myBudget for " + monthNames[d.getMonth()]);
+        </script>
+        <h2 id="divider"></h2>
+        <h2>Hidden Tag (see below)</h2>
+        <div id="left">
+            <img src="http://sr.photos3.fotosearch.com/bthumb/CSP/CSP378/k3788313.jpg" alt="Dollar Sign" />
+        </div>
+        <form name="budgetForm" action="_" method="POST">
+            <div class="field">Enter monthly income:
+                <input id="value1" type="text" size="9" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Rent:
+                <input id="value2" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Utilities:
+                <input id="value3" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Food:
+                <input id="value4" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Transportation:
+                <input id="value5" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Entertainment:
+                <input id="value6" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">Credit:
+                <input id="value7" type="text" size="6" placeholder="$" onblur="validateNumber(this.value)" />
+            </div>
+            <div class="field">
+                <input type="button" value="Calculate" onclick="calcPrice();" />
+            </div>
+        </form>
+        <input id="answer" type="text" size="4" placeholder="$" /> left over.
+        <div id="divider"></div>
+        <h4>Coming Soon === NoteKeep!!</h4>
+        <form>
+            <div class="field">
+                <textarea name="notes" cols=30 rows=6></textarea>
+            </div>
+            <div class="field">
+                <input type="button" value="Submit" onclick="writeNote();" />
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript">
+    document.getElementsByTagName('h2')[1].innerHTML = "";
+    </script>
+</body>
+
+</html>
