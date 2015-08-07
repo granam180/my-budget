@@ -1,0 +1,39 @@
+ body {
+        font: 14px arial;
+        text-align: center;
+    }
+
+    textarea {
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    #frame {
+        width: 400px;
+        border: 13px solid #55a9a2;
+        padding: 15px;
+    }
+
+    #header {
+        font: 24px arial;
+        font-weight: bold;
+    }
+
+    #left {
+        float: left;
+        width: 110px;
+    }
+
+    #divider {
+        margin: 20px 10px;
+        border-bottom: 2px solid #f7ac79;
+    }
+
+    #clear {
+    	clear: both;
+    }
+
+    div.field {
+        margin-bottom: 10px;
+        text-align: right;
+    }
